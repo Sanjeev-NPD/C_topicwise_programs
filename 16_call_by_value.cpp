@@ -35,7 +35,7 @@ int main()
     cin>>a;
     cout<<"Enter The value of b : "<<endl;
     cin>>b;
-   //swap(a,b);                                  //////  This is only pasting the value of a and b in the swap function and nothing else.
+   //swap(a,b);                                  //////  This is only pasting the value of a and b in the swap function and nothing . This is call by value.
    //swapPointer(&a,&b);                         //////  This method of calling the function is known as call by reference using pointer.
     swapReference(a,b);                          //////  This method of calling the function is known as call by reference using reference variable.
     cout<<"The swapped value of a is "<<a<<endl;
