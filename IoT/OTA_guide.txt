@@ -1,0 +1,140 @@
+Setting up secure OTA (Over-The-Air) updates for your ESP32, including the use of partitioning and handling OTA files securely.
+
+1. Setting Up the ESP32 for Secure OTA
+Step 1: Partitioning Scheme
+The ESP32 requires a specific partitioning scheme to handle OTA updates. This scheme reserves space for two application partitions (app0 and app1) and an OTA data partition.
+
+Create a Custom Partition Table:
+
+Create a partitions.csv file with the following content:
+csv
+
+# Name,   Type, SubType, Offset,  Size, Flags
+nvs,      data, nvs,     0x9000,  0x5000,
+otadata,  data, ota,     0xe000,  0x2000,
+app0,     app,  ota_0,   0x10000, 0x140000,
+app1,     app,  ota_1,   0x150000, 0x140000,
+spiffs,   data, spiffs,  0x290000,0x170000,
+
+Flash the Partition Table:
+
+In Arduino IDE, navigate to Tools > Partition Scheme and select "Minimal SPIFFS (1.9MB APP with OTA/190KB SPIFFS)" or upload your custom partition table.
+Step 2: Configure Wi-Fi and SSL/TLS
+Secure OTA updates require a secure connection. Set up Wi-Fi and configure SSL/TLS:
+
+
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <WiFiClientSecure.h>
+#include <Update.h>
+
+const char* ssid = "your-SSID";
+const char* password = "your-PASSWORD";
+
+WiFiClientSecure client;
+Step 3: Obtain SSL/TLS Certificates
+To ensure a secure connection to your server:
+
+Root CA Certificate:
+
+Obtain the server’s root CA certificate (PEM format).
+Store it in your code:
+
+const char* rootCACertificate = \
+"-----BEGIN CERTIFICATE-----\n" \
+"MIIDQTCCAimgAwIBAgITBmyfz5m...\n" \
+"-----END CERTIFICATE-----\n";
+Assign the Certificate to the Client:
+
+
+client.setCACert(rootCACertificate);
+2. Writing the Secure OTA Code
+Step 1: Implement OTA Update Logic
+Here’s how to check for an update and apply it securely:
+
+
+const char* firmwareUrl = "https://your-server.com/firmware.bin";
+
+void checkForUpdate() {
+  HTTPClient http;
+  http.begin(client, firmwareUrl);  // Pass the secure client
+  int httpCode = http.GET();
+
+  if (httpCode == HTTP_CODE_OK) {
+    int contentLength = http.getSize();
+    bool canBegin = Update.begin(contentLength);
+
+    if (canBegin) {
+      size_t written = Update.writeStream(http.getStream());
+
+      if (written == contentLength) {
+        Serial.println("Update successfully written.");
+        if (Update.end()) {
+          Serial.println("Update finished.");
+          if (Update.isFinished()) {
+            Serial.println("Rebooting...");
+            ESP.restart();
+          } else {
+            Serial.println("Update not finished.");
+          }
+        } else {
+          Serial.println("Error Occurred. Error #: " + String(Update.getError()));
+        }
+      } else {
+        Serial.println("Written only : " + String(written) + "/" + String(contentLength));
+      }
+    } else {
+      Serial.println("Not enough space for OTA update.");
+    }
+  } else {
+    Serial.println("Failed to download the update, HTTP code: " + String(httpCode));
+  }
+
+  http.end();
+}
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
+
+  checkForUpdate();
+}
+
+void loop() {
+  // Your regular code here
+}
+
+Step 2: Handle Failures and Rollbacks
+Implement mechanisms to handle update failures and rollbacks:
+
+Rollback on Failure: If the new firmware fails to boot, the ESP32 can revert to the previous version.
+
+
+if (!Update.isFinished()) {
+  ESP.restart(); // ESP32 will revert to previous partition
+}
+3. Deploying OTA Updates
+Step 1: Host the Firmware
+Host your firmware binary (firmware.bin) on a secure HTTPS server. Ensure the URL is accessible and uses the same root CA certificate you embedded in your code.
+
+Step 2: Upload Firmware via OTA
+After deploying the initial OTA-enabled firmware via USB, subsequent updates can be performed OTA.
+
+4. Testing and Validation
+Test the OTA Update:
+
+Push a new firmware version to your server.
+Trigger the OTA process in your ESP32.
+Observe the update process in the Serial Monitor.
+Validate Partition Usage:
+
+Ensure that the correct partition is in use and that the rollback mechanism works if necessary.
+5. Maintenance and Best Practices
+Regularly Update Root CA Certificates: If the server's root certificate changes, update your ESP32 firmware accordingly.
+Monitor OTA Failures: Implement logging or feedback mechanisms to monitor the success or failure of OTA updates.
+By following these steps, you'll enable secure OTA updates on your ESP32 device, ensuring that your firmware can be updated safely and efficiently.
