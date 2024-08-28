@@ -1,3 +1,11 @@
+/*A union in C++ is a data structure that allows storing different data types in the same memory location, but only one value at a time. 
+Key features include:
+
+Memory Sharing: All members share the same memory, so the size of the union is the size of its largest member.
+Mutual Exclusivity: Only one member can hold a value at any given time.
+Access Control: The last written member's value is valid, accessing others leads to undefined behavior.*/
+
+
 #include<iostream>
 #include<string>
 #include<cstring>

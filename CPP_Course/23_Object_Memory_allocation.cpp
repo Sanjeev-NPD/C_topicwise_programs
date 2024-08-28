@@ -73,17 +73,56 @@
 
 ///////////////////////Ignore the below programm. I have written it for my personal work(reverse of a string)///////////////
 
-#include<iostream>
-#include<string>
-#include<algorithm>
+// #include<iostream>
+// #include<algorithm>
+// #include<string>
 
+// using namespace std;
+
+// int main()
+// {   string data;
+//     cout<<"enter the no. "<<endl;
+//     getline(cin,data);
+//     reverse(data.begin(),data.end());
+//     cout<<data<<endl;
+//     return 0;  
+// }
+
+// #include<iostream>
+// #include<algorithm>
+// #include<string>
+
+// using namespace std;
+
+// int main()
+// {   string data="This is reverse";
+//     cout<<"enter the no. "<<endl;
+//     // getline(cin,data);
+//     reverse(data.begin(),data.end());
+//     cout<<data<<endl;
+//     return 0;  
+// } 
+
+#include<iostream>
 using namespace std;
 
+char str[] = "Reverse of the statement"; 
+int length =0;
+
 int main()
-{   string data;
-    cout<<"enter the no. "<<endl;
-    cin>>data;
-    reverse(data.begin(),data.end());
-    cout<<data<<endl;
+{  
+    while (str[length] !='\0')
+    {
+        length++;
+    }
+
+    for (int i = 0; i < length/2; i++)
+    {
+        int temp = str[i];
+        str[i]= str[length -i-1];
+        str[length-i-1]= temp;       
+    }
+    cout<<str;
+    
     return 0;  
 } 

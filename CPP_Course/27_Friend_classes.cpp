@@ -1,3 +1,6 @@
+/*A friend class in C++ is a class that is granted access to the private and protected members of another class. 
+This allows the friend class to access and modify the internal state of the class that declared it as a friend.*/
+
 #include <iostream>
 #include <string>
 using namespace std;

@@ -1,3 +1,5 @@
+/*A friend function in C++ is a function that is not a member of a class but is granted access to the private and protected members of the class.*/
+
 #include<iostream>
 #include<string>
 using namespace std;

@@ -1,0 +1,82 @@
+Serial Communication Protocols
+
+=>  UART (Universal Asynchronous Receiver/Transmitter)
+#   Speed: 300 bps to 1 Mbps (common speeds are 9600 bps, 115200 bps)
+
+=>  USART (Universal Synchronous/Asynchronous Receiver/Transmitter)
+#   Speed: Similar to UART, up to 1 Mbps
+
+=>  SPI (Serial Peripheral Interface)
+#   Speed: Up to 100 Mbps (can vary based on implementation and hardware)
+
+=>  I2C (Inter-Integrated Circuit)
+#   Speed: Standard mode (100 kbps), Fast mode (400 kbps), Fast-mode Plus (1 Mbps), High-speed mode (3.4 Mbps)
+
+=>  CAN (Controller Area Network)
+#   Speed: Up to 1 Mbps (common speeds are 125 kbps, 500 kbps)
+
+=>  RS-232
+#   Speed: Up to 115200 bps (some implementations support higher speeds)
+
+=>  RS-485
+#   Speed: Up to 10 Mbps (typically used at lower speeds like 9600 bps to 1 Mbps)
+
+=>  1-Wire
+#   Speed: Up to 16.3 kbps (standard speed is 16.3 kbps)
+
+=>  LIN (Local Interconnect Network)
+#   Speed: Up to 20 kbps
+
+=>  USB (Universal Serial Bus)
+#   Speed: Low-speed (1.5 Mbps), Full-speed (12 Mbps), High-speed (480 Mbps), SuperSpeed (5 Gbps), SuperSpeed+ (10/20 Gbps)
+
+=>  JTAG (Joint Test Action Group)
+#   Speed: Up to 10 Mbps (depends on the implementation and devices)
+
+=>  SWD (Serial Wire Debug)
+#   Speed: Up to 100 Mbps
+
+=>  Modbus
+#   Speed: Up to 10 Mbps (common speeds are 9600 bps, 19200 bps)
+
+=>  HDLC (High-Level Data Link Control)
+#   Speed: Up to 2 Mbps (depends on the network and hardware)
+
+=>  Ethernet
+#   Speed: 10 Mbps (10Base-T), 100 Mbps (100Base-TX), 1 Gbps (Gigabit Ethernet), 10 Gbps (10 Gigabit Ethernet), 40/100 Gbps (higher speeds available)
+
+
+
+    Parallel Communication Protocols
+
+
+=>  Parallel ATA (PATA)
+#   Speed: Up to 133 MBps
+
+=>  Peripheral Component Interconnect (PCI)
+#   Speed: 133 MBps (PCI), 533 MBps (PCI-X), up to 8 GBps (PCI Express)
+
+=>  Parallel Data Bus
+#   Speed: Varies widely depending on the specific implementation
+
+=>  IEEE 1284 (Parallel Port)
+#   Speed: Up to 2 MBps (in Enhanced Parallel Port mode)
+
+=>  Advanced Technology Attachment (ATA)
+#   Speed: Up to 133 MBps (Parallel ATA), higher speeds for Serial ATA (SATA)
+
+=>  SCSI (Small Computer System Interface)
+#   Speed: Up to 640 MBps (Ultra320 SCSI)
+
+=>  VMEbus (Versa Module Europa Bus)
+#   Speed: Up to 160 MBps (depends on the version and implementation)
+
+=>  ISA (Industry Standard Architecture)
+#   Speed: Up to 8 MBps
+
+=>  PCI Express (PCIe)
+#   Speed: Up to 1 GBps per lane (PCIe 1.0), 2 GBps (PCIe 2.0), 4 GBps (PCIe 3.0), 8 GBps (PCIe 4.0), 16 GBps (PCIe 5.0)
+
+=>  PCMCIA (Personal Computer Memory Card International Association)
+#   Speed: Up to 132 MBps (CardBus)
+   

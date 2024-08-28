@@ -1,3 +1,6 @@
+/* An inline function in C++ is a function where the compiler attempts to expand the function's code at each call point, instead of performing 
+a standard function call, to reduce overhead and potentially improve performance. */
+
 #include<iostream>
 using namespace std;
 int a,b,c;

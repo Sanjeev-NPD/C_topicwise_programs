@@ -23,29 +23,29 @@ int a, n, i;
 /// @brief ////////////
 ////This iteration method to find the factorial of any number.
 /// @return /
-int main()
-{
-    int count;
-    cout << "Enter the number" << endl;
-    cin >> count;
+// int main()
+// {
+//     int count;
+//     cout << "Enter the number" << endl;
+//     cin >> count;
 
-    if (count == 0 || count == 1)
-    {
-        cout << 1 << endl;
-    }
-    else
-    {
-        int factorial = 1;
-        for (int i = 1; i <= count; i++)
-        {
-           factorial *=i;
-        //    cout<<factorial<< " ";
-        }
-        cout<<factorial<<"  ";
-    }
+//     if (count == 0 || count == 1)
+//     {
+//         cout << 1 << endl;
+//     }
+//     else
+//     {
+//         int factorial = 1;
+//         for (int i = 1; i <= count; i++)
+//         {
+//            factorial *=i;
+//         //    cout<<factorial<< " ";
+//         }
+//         cout<<factorial<<"  ";
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 
@@ -79,34 +79,34 @@ int main()
 
 /////////////////////////Iteration method////////////
 
-// double fibonacci(int num)
-// {
-//     double first =0, second =1, next;
-//     for (i = 1; i <=num; i++)
-//     {
-//     if (i<=1)
-//     {
-//         next = 1;
-//     }
-//     else
-//     {
-//         next = first + second;
-//         first = second;
-//         second= next;
-//     }
-//     cout<< next<<"  ";
-//     }
+double fibonacci(int num)
+{
+    double first =0, second =1, next;
+    for (i = 1; i <=num; i++)
+    {
+    if (i<=1)
+    {
+        next = 1;
+    }
+    else
+    {
+        next = first + second;
+        first = second;
+        second = next;
+    }
+    cout<< next<<"  ";
+    }
 
-// }
-// int main()
-// {
-//     int num;
-//     cout<<"Enter the Required Number "<<endl;
-//     cin>>num;
-//     fibonacci(num);
-//     return 0;
+}
+int main()
+{
+    int num;
+    cout<<"Enter the Required Number "<<endl;
+    cin>>num;
+    fibonacci(num);
+    return 0;
 
-// }
+}
 
 ///////////// 2nd method for doing the above steps///
 

@@ -51,12 +51,15 @@
 //     // jadon.set_details();
 //     // jadon.get_details();
 
-//     ////////////////////So to overcome this issue we can create the array of object and can take the one by one by calling it in loop//////////////////////////
+//     ////////////////////So to overcome this issue we can create the array of object and can take the inputs one by one by calling it in loop//////////////////////////
 
 //     object_array sk[4];
-//     for (int i = 0; i < 4; i++)
+//     for (int i = 0; i < 3; i++)
 //     {
 //         sk[i].set_details();
+//     }
+//     for (int i = 0; i < 3; i++)
+//     {
 //         sk[i].get_details();
 //     }
 

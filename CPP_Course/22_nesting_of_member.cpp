@@ -1,4 +1,4 @@
-// program that will take input from user and it will report whether it is binary or not and if it is binary then it do the ones complement of the same.
+// program that will take input from user and it will report whether it is binary or not and if it is binary then it will do the ones complement of the same.
 
 #include <iostream>
 #include <string>

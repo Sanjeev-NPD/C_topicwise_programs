@@ -1,6 +1,5 @@
 ///////////This program will tell you how object of a class based on constructor can be switched automatically by the compiler./////
 
-
 #include<iostream>
 #include<string>
 using namespace std;
@@ -55,7 +54,7 @@ int main()
     cin>>p;
     cout<<endl;
     cout<<"Enter the Toy Discount:   ";
-    cin>>d; 
+    cin>>d;
     cout<<endl;
     t2=dynamic(t,p,d);                           //Dynamic initialization of object using constructor based on user input
     t2.market();
@@ -73,3 +72,4 @@ int main()
 
     return 0;
 }
+

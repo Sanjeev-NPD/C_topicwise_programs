@@ -5,7 +5,9 @@ Syntax to Declare Vector in C++ :
 vector<dataType> vectorName;
 
 1. Initialization Using List:
-vector<dataType> name({ value1, value2, value3 ....});
+vector<dataType> name{ value1, value2, value3 ....};  this is called uniform intiliazation  and it can also be represented as below:
+2. // Initializer list
+vector<int> vector1 = { value1, value2, value3 ....};
 
 2.  Initialization With a Single Value  //Here, we specify the size of the vector and then initialize every element of
 vector<dataType> name(size, value);     //the vector with the value.
@@ -15,52 +17,52 @@ vector<dataType> name(other_vec);
 
 */
 
-// #include <iostream>
-// #include <string>
-// #include <vector>
-// using namespace std;
-
-// int main()
-// {
-//     vector<int> get; // get is integer vector. get is object of class vector.
-//     for (int i = 0; i < 10; i++)
-//     {
-//         get.push_back(i); // It push the elements into a vector from the back
-//     }
-//     for (auto i = get.begin(); i < get.end(); i++)
-//     {
-//         cout << *i + 1 << " ";
-//     }
-
-//     return 0;
-// }
-
-//////////////// another example of vector array////////////////////////////
 #include <iostream>
+#include <string>
 #include <vector>
 using namespace std;
 
 int main()
 {
-    volatile int i = 1;
-    int count;
-    vector<int> vect;
-    cout << "Enter the value" << endl;
-    while (i == 1)
+    vector<int> get; // get is integer vector. get is object of class vector.
+    for (int i = 0; i < 10; i++)
     {
-        cin >> count;
-        if (count == 00)
-        {
-            i = 0;
-        }
-        else
-            vect.push_back(count);
+        get.push_back(i); // It push the elements into a vector from the back
+    }
+    for (auto i = get.begin(); i < get.end(); i++)
+    {
+        cout << *i + 1 << " ";
     }
 
-    for (auto i = vect.begin(); i != vect.end(); i++)
-    {
-        cout << *i << " ";
-    }
-    
     return 0;
 }
+
+//////////////// another example of vector array////////////////////////////
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// int main()
+// {
+//     volatile int i = 1;
+//     int count;
+//     vector<int> vect;
+//     cout << "Enter the value" << endl;
+//     while (i == 1)
+//     {
+//         cin >> count;
+//         if (count == 0)
+//         {
+//             i = 0;
+//         }
+//         else
+//             vect.push_back(count);
+//     }
+
+//     for (auto i = vect.begin(); i != vect.end(); i++)
+//     {
+//         cout << *i << " ";
+//     }
+    
+//     return 0;
+// }
