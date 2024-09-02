@@ -16,7 +16,7 @@ public:
         cout << endl;
     }
     void binary()
-    { 0
+    { 
         int length = input.length();
         value = 0;
         for (int j = 0; j<length; j++)

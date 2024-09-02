@@ -68,7 +68,7 @@ void findUnpairedElements(const vector<int>& A) {
 }
 
 int main() {
-    vector<int> A = {9, 3, 9, 3, 9, 7, 9, 8, 12, 14, 9, 3, 9, 3};
+    vector<int> A = {9, 3, 9, 3, 9, 7, 9, 8, 12, 14, 9, 3, 9, 3,9};
     findUnpairedElements(A);
 
     return 0;

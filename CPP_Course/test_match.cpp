@@ -1,39 +1,32 @@
-#include<iostream>
-using  namespace std;
+// vector to find how many repeated numbers are there in the array
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
 
-int fab(int n)
+void oddwala(vector<int>& arr)
 {
-    int first =0, second =1, next;
-    for(int i=0; i<=n; i++)
+    unordered_map<int, int> token;
+    for(const int count : arr)
     {
-    if(i<=1)
+        token[count]++;
+        // cout << "Incrementing count for " << count << " now it is " << token[count] << endl;
+    }
+
+    for(const auto &count : token)
     {
-        if(i == 0)
+        //  cout << "Checking count for " << count.first << ": " << count.second << endl;
+        if(count.second %2 !=0)
         {
-            next = 0;
-        }
-        else
-        {
-            next = 1;
+            cout<<"Value whose count is odd: "<<count.first<<endl;
         }
     }
-    else
-    {
-        next = first + second;
-        first =second;
-        second =next;
-    }
-        cout<<next;
-    }
-    
-    
+
 }
 
 int main()
 {
-    int num;
-    cout<<"Enter the value   ";
-    cin>>num;
-    fab(num);
-    
+    vector<int> arr = {1,2,3,4,5,6,7};
+    oddwala(arr);
+    return 0;
 }
