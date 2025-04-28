@@ -1,0 +1,86 @@
+﻿Transmitter,Receivers,ID,Layout,Name,Data
+METER,"IVI
+TCU",4C1,0.7-3.0,METER_ODO,"0.1~1609346.0：Meter 
+transmission ODO value
+Even if ODO is over 1609346.0, this is sent 1609346.0.
+FFFFFFFF：Meter
+transmission at ERROR"
+METER,"IVI
+TCU",4C1,4.7-5.0,METER_SPEED,"0.01～655.34：Meter 
+transmission vehicle speed
+655.35(FFFF)：Meter
+transmission at ERROR"
+METER,"IVI
+TCU",4C1,6.0-7.6,METER_GRIP_HEATER_LEVEL,"0:GRIP HEATER OFF
+1:GRIP HEATER LEVEL1
+2:GRIP HEATER LEVEL2
+3:GRIP HEATER LEVEL3
+4:GRIP HEATER LEVEL4
+5:GRIP HEATER LEVEL5
+6:Fail"
+METER,"IVI
+TCU",4C1,6.2-6.2,METER_TRIPA_AUTO_RESET,"0: Auto reset off, 1: Auto reset on"
+METER,"IVI
+TCU",4C1,6.6-6.3,METER_BACKLIGHT_LEVEL,"0: AUTO, 1～8: Level.1～Level.8"
+METER,"IVI
+TCU",4C1,6.7-6.7,IVI_BACKGROUND,"0:White, 1: Black"
+METER,"IVI
+TCU",4C1,7.0-7.3,CHECKSUM_4C1,
+METER,"IVI
+TCU",4C1,7.4-7.5,ALIVE_COUNTER_4C1,
+TCU,IVI,4CB,0.7-0.7,TCU_TRACKING_ON,"0: TCU tracking function is disabled.
+1: TCU tracking functions is enabled."
+TCU,IVI,4CB,0.5-0.5,TCU_STOPPED_ID,"0: TCU tracking is not disabled due to ID mismatch.
+1: TCU tracking is disabled due to ID mismatch."
+TCU,IVI,4CB,0.4-0.4,TCU_STOPPED_FORCE,"0: TCU tracking is not disabled due to force stop command from IVI.
+1: TCU tracking is disabled due to force stop command from IVI."
+TCU,IVI,4CB,0.3-0.3,TCU_STOPPED_ERR,"0: TCU tracking is not disabled due to some error occurd in TCU.
+1: TCU tracking is disabled due to some error occurd in TCU."
+TCU,IVI,4CB,0.2-0.2,TCU_INITIALIZING,"0: TCU is not in the initializing process, or initialization is completed.
+1: TCU is initializing."
+TCU,IVI,4CB,0.1-0.1,TCU_MEMORY_ERASING,"0: TCU is not in the erasing memory process, or its internal memory is erased with the command from IVI.
+1: TCU is not in the erasing memory process."
+TCU,IVI,4CB,0.0-0.0,TCU_RESTARTING,"0: TCU is not in the restarting process, or TCU firmware is restarted with the command from IVI.
+1: TCU is in the restarting process"
+TCU,IVI,4CB,1.7-1.7,TCU_NETWORK_CONDITION,"0: TCU is not connected to server.
+1: TCU is connected to server."
+TCU,IVI,4CB,1.6-1.6,TCU_GPS_CONDITION,"0: GPS of TCU is not available.
+1: GPS of TCU is available."
+TCU,IVI,4CB,1.5-1.5,TCU_ERR,"0: TCU does not have any DTC.
+1: TCU has any DTC."
+TCU,IVI,4CB,7.0-7.3,CHECKSUM_4CB,
+TCU,IVI,4CB,7.4-7.5,ALIVE_COUNTER_4CB,
+TCU,IVI,4D1,0.7-5.6,IVI_ID_FROM_TCU,"The stored IVI ID in TCU
+0: Invalid ID
+From 1 to 2^42-1: Valid ID"
+TCU,IVI,4D1,7.0-7.3,CHECKSUM_4D1,
+TCU,IVI,4D1,7.4-7.5,ALIVE_COUNTER_4D1,
+TCU,IVI,4D2,0.7-6.0,TCU_ID_FROM_TCU,"The stored TCU ID in TCU
+0: Invalid ID
+From 1 to 2^7^8-1: Valid ID"
+TCU,IVI,4D2,7.0-7.3,CHECKSUM_4D2,
+TCU,IVI,4D2,7.4-7.5,ALIVE_COUNTER_4D2,
+IVI,TCU,4D4,0.7-0.7,TCU_ID_INVALIDATED,"0: The combination of TCU ID and IVI ID is correct.
+1: The combination of TCU ID and IVI ID is mismatch."
+IVI,TCU,4D4,0.6-0.6,TCU_INIT_CMD,"0: TCU initialization request disabled
+1: TCU initialization request enabled"
+IVI,TCU,4D4,0.5-0.5,TCU_FORCE_STOP_CMD,"0: TCU tracking forced stop command disabled
+1: TCU tracking forced stop command enabled"
+IVI,TCU,4D4,0.4-0.4,TCU_MEMORY_ERASE_CMD,"0: TCU internal memory erase command disabled
+1: TCU internal memory erase command enabled"
+IVI,TCU,4D4,0.3-0.3,TCU_RESTART_CMD,"0: TCU restart command disabled
+1: TCU restart command enabled"
+IVI,TCU,4D4,0.2-0.2,TCU_ALLOW_FUNCTION_CMD,"0: TCU start tracking function command disabled
+1: TCU start tracking function command enabled"
+IVI,TCU,4D4,7.0-7.3,CHECKSUM_4D4,
+IVI,TCU,4D4,7.4-7.5,ALIVE_COUNTER_4D4,
+IVI,TCU,4D5,0.7-5.6,IVI_ID_FROM_IVI,"The stored IVI ID in IVI
+0: Invalid ID
+From 1 to 2^42-1: Valid ID"
+IVI,TCU,4D5,7.0-7.3,CHECKSUM_4D5,
+IVI,TCU,4D5,7.4-7.5,ALIVE_COUNTER_4D5,
+IVI,TCU,4D6,0.6-7.0,TCU_ID_FROM_IVI,"The stored TCU ID in IVI
+0: Invalid ID
+From 1 to 2^7^8-1: Valid ID"
+IVI,TCU,4D6,7.0-7.3,CHECKSUM_4D6,
+IVI,TCU,4D6,7.4-7.5,ALIVE_COUNTER_4D6,
